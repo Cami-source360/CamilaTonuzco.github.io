@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>3-DOF RRP SCARA Robot | Engineering Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header">
+				<a href="index.html" class="logo">Portfolio</a>
+			</header>
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">About Me</a></li>
+					<li class="active"><a href="3-dof-rrp-scara-robot.html">3-DOF RRP SCARA Robot</a></li>
+				</ul>
+				<ul class="icons">
+				</ul>
+			</nav>
+			<div id="main">
+				<section class="post">
+					<header class="major">
+						<span class="date">Project 04</span>
+						<h1>3-DOF RRP SCARA Robot</h1>
+						<p><strong>Development and Control of a Compact SCARA Manipulator for Precision Motion Applications</strong></p>
+					</header>
+					<div class="image main"><img src="images/Scara/cadScara (1).jpeg" style="width:70%; display:block; margin:auto;" alt="SCARA CAD Design" /></div>
+					<h2>Project Details</h2>
+					<p><strong>Completed:</strong> November 2025</p>
+					<h2>Project Overview</h2>
+					<p>
+					This project focused on the development of a compact 3-degree-of-freedom SCARA robot designed for positioning, trajectory execution, and drawing applications. The manipulator combines mechanical transmission systems, embedded control, and high-level motion planning to achieve smooth and coordinated movement.
+					</p>
+					<p>
+					The platform was conceived as an experimental robotics system capable of validating concepts related to kinematics, motion control, interpolation, and embedded real-time programming.
+					</p>
+					<p>
+					Main project capabilities included:
+					</p>
+					<ul>
+						<li>Planar motion using an RRP SCARA configuration</li>
+						<li>Vertical end-effector actuation through a linear mechanism</li>
+						<li>Precision-enhanced pulley transmission system</li>
+						<li>Embedded cascade motor control</li>
+						<li>Continuous trajectory generation and execution</li>
+						<li>Real-time visualization and monitoring through ROS 2</li>
+					</ul>
+					<h2>Mechanical Design</h2>
+					<div class="image main">
+						<img src="images/Scara/cadScara (1).jpeg" style="width:70%; display:block; margin:auto;" alt="SCARA CAD Model" />
+					</div>
+					<p>
+					The mechanical architecture was developed with emphasis on precision, rigidity, and ease of manufacturing. The robot structure consists of a rotating base, two articulated links, and a vertical actuation mechanism mounted on the second arm.
+					</p>
+					<p>
+					To improve positioning resolution, both rotational joints were coupled through a 4:1 pulley reduction system. Several design iterations were evaluated during development, including a spring-based tensioning mechanism. Experimental testing later showed that a fixed tensioning configuration provided improved stability and repeatability.
+					</p>
+					<p>
+					Additional structural reinforcement was introduced on the first arm to reduce bending effects during operation. The vertical axis uses a compact rack-and-pinion mechanism that allows controlled movement of the drawing tool.
+					</p>
+					<p>
+					The entire assembly was modeled in Autodesk Inventor to validate dimensions, transmission alignment, and component integration prior to fabrication.
+					</p>
+					<p>
+					Most structural components were manufactured using laser-cut acrylic, while PETG 3D-printed parts were used for geometrically complex sections such as the rack-and-pinion assembly. Custom shafts and couplings were machined in steel and brass to improve durability and transmission reliability.
+					</p>
+					<div class="image main">
+						<img src="images/Scara/RealScara (1).jpeg" style="width:70%; display:block; margin:auto;" alt="Physical SCARA Prototype" />
+					</div>
+					<h2>Electronics</h2>
+					<p>
+					The electronic architecture was centered around a custom PCB developed to support both the SCARA manipulator and additional robotics platforms created throughout the course.
+					</p>
+					<div class="image main">
+						<img src="images/Scara/scarapcb (1).jpeg" style="width:70%; display:block; margin:auto;" alt="SCARA PCB" />
+					</div>
+					<p>
+					The board integrated:
+					</p>
+					<ul>
+						<li>Motor driver circuitry</li>
+						<li>Power regulation stages</li>
+						<li>Encoder and sensor interfaces</li>
+						<li>Communication peripherals</li>
+						<li>PWM-based actuator control</li>
+					</ul>
+					<p>
+					The modular design simplified system integration and reduced wiring complexity while enabling rapid testing of different robotic configurations.
+					</p>
+					<p>
+					Special attention was given to signal reliability and power distribution to ensure stable operation during simultaneous multi-axis motion.
+					</p>
+					<h2>Motion Control Strategy</h2>
+					<p>
+					The robot executes point-to-point motion through inverse kinematic calculations that transform Cartesian target positions into joint-space references.
+					</p>
+					<p>
+					A synchronized timing strategy coordinates the movement of all joints, allowing the manipulator to transition smoothly between positions while maintaining stable and predictable motion.
+					</p>
+					<p>
+					This approach enabled reliable positioning performance during both discrete movements and continuous trajectory execution.
+					</p>
+					<h2>Trajectory Planning and Drawing</h2>
+					<p>
+					Beyond simple positioning tasks, the manipulator was designed to execute continuous paths and parametric trajectories generated from engineering drawings.
+					</p>
+					<p>
+					The software framework supports multiple interpolation methods, including:
+					</p>
+					<ul>
+						<li>Linear interpolation</li>
+						<li>Cubic interpolation</li>
+						<li>Quintic interpolation</li>
+					</ul>
+					<p>
+					Trajectory generation can be performed in both task space and joint space, allowing smoother transitions and improved motion quality during drawing operations.
+					</p>
+					<p>
+					This architecture enabled the robot to reproduce complex geometries while maintaining continuity and minimizing abrupt velocity changes.
+					</p>
+					<h2>Embedded Firmware Architecture</h2>
+					<p>
+					The low-level controller was implemented in object-oriented C++ and executed using hardware-timed loops running independently from the communication middleware.
+					</p>
+					<p>
+					Dedicated timers handled deterministic execution of the control algorithms, ensuring stable real-time behavior even during communication or visualization tasks.
+					</p>
+					<p>
+					The robot uses a cascade control structure composed of:
+					</p>
+					<ul>
+						<li>An outer-loop proportional position controller</li>
+						<li>An inner-loop discrete PID velocity controller</li>
+					</ul>
+					<p>
+					The firmware continuously processes encoder feedback, estimates joint velocity, computes tracking errors, and generates PWM control signals for motor actuation.
+					</p>
+					<p>
+					This multi-layer control strategy improved tracking accuracy, responsiveness, and motion smoothness during dynamic trajectory execution.
+					</p>
+					<h2>High-Level Software and ROS 2 Integration</h2>
+					<p>
+					High-level trajectory generation and visualization were implemented in ROS 2 running on a host computer.
+					</p>
+					<p>
+					A dedicated software node converts DXF drawings into dense point clouds, generates interpolated trajectories, and solves the inverse kinematics of the RRP manipulator.
+					</p>
+					<p>
+					Additional interpolation is then applied in configuration space to improve motion smoothness before execution.
+					</p>
+					<p>
+					Main software features included:
+					</p>
+					<ul>
+						<li>DXF preprocessing and point extraction</li>
+						<li>Task-space interpolation</li>
+						<li>Inverse kinematic calculations</li>
+						<li>Real-time trajectory streaming</li>
+						<li>RViz-based visualization (digital twin)</li>
+					</ul>
+					<p>
+					The microcontroller continuously transmitted joint-state estimates back to ROS 2, enabling live comparison between desired and measured trajectories.
+					</p>
+					<h2>Experimental Results</h2>
+					<p>
+					Experimental validation demonstrated stable and accurate execution of both linear and curved trajectories.
+					</p>
+					<p>
+					The manipulator successfully reproduced complex paths while maintaining smooth transitions and coordinated multi-axis motion. The results validated the effectiveness of the mechanical design, embedded control architecture, and trajectory planning framework.
+					</p>
+					<h2>Demonstration Videos</h2>
+					<div class="video-container">
+						<iframe
+							width="100%"
+							height="500"
+							src="https://www.youtube.com/embed/J8iH4BmqF9U"
+							title="SCARA Robot Demo 1"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+					<br>
+					<div class="video-container">
+						<iframe
+							width="100%"
+							height="500"
+							src="https://www.youtube.com/embed/6IFVKpqnnZA"
+							title="SCARA Robot Demo 2"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+					<br>
+					<div class="video-container">
+						<iframe
+							width="100%"
+							height="500"
+							src="https://www.youtube.com/embed/n7RnGKBvBWU"
+							title="SCARA Robot Demo 3"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+					<br>
+					<div class="video-container">
+						<iframe
+							width="100%"
+							height="500"
+							src="https://www.youtube.com/embed/tEMiMnovwXo"
+							title="SCARA Robot Demo 4"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+					</div>
+					<h2>Repository</h2>
+					<p>
+						<a href="https://github.com/Cami-source360/Scara_publisher.git" target="_blank">Cami-source360/Scara_publisher.git</a>
+					</p>
+					<ul class="actions">
+						<li><a href="index.html#projects" class="button">Back to Projects</a></li>
+					</ul>
+				</section>
+			</div>
+			<footer id="footer">
+				<section class="split contact">
+				</section>
+			</footer>
+			<div id="copyright">
+				<ul><li>&copy; Portfolio</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

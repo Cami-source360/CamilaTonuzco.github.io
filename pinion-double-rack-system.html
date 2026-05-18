@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Pinion-Double Rack System | Engineering Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header">
+				<a href="index.html" class="logo">Portfolio</a>
+			</header>
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">About Me</a></li>
+					<li class="active"><a href="pinion-double-rack-system.html">Pinion-Double Rack System</a></li>
+				</ul>
+				<ul class="icons">
+				</ul>
+			</nav>
+			<div id="main">
+				<section class="post">
+					<header class="major">
+						<span class="date">Project 01</span>
+						<h1>Pinion Double-Rack System</h1>
+						<p><strong>Modeling, instrumentation, and hybrid control of a mechanical-electrical system</strong></p>
+					</header>
+					<div style="background-color:#caff69; color:rgb(20, 19, 19); padding:1em; margin-bottom:1em; border-radius:8px; text-align:center; font-weight:bold;">
+					Presented at the 7th IEEE Colombian Conference on Automatic Control (CCAC 2025) as part of the Reliability, Industrial Systems and Education in Control Technical Session.
+					</div>
+					<div style="background-color:#caff69; color:rgb(30, 25, 25); padding:1em; margin-bottom:2em; border-radius:8px; text-align:center; font-weight:bold;">
+					Presented at the XIV Congreso Internacional de Ingenieria Mecatronica y Automatizacion (CIIMA 2025) as part of the Control Technical Session.
+					</div>
+					<div class="image main"></div>
+					<h2>Project Details</h2>
+					<p>
+					<strong>CIIMA 2025 (Published)</strong> - <strong>IEEE CCAC 2025 (Published)</strong>
+					</p>
+					<h2>Pinion System Setup</h2>
+					<p>
+					This project focuses on the design, construction, and analytical modeling of a double-rack mechanism for advanced system identification and hybrid dynamics research.
+					</p>
+					<p>
+					The initial phase of the project was presented at the XIV Congreso Internacional de Ingenieria Mecatronica y Automatizacion (CIIMA 2025). In that study, we implemented a physical prototype consisting of a DC motor, dual opposing racks, and elastic springs, instrumented with current, displacement, and angular velocity sensors.
+					</p>
+					<h2>Project Render</h2>
+					<div class="image main">
+						<img src="images/pinion_double_rack/283Propio (1).png" alt="Pinion Double Rack System CAD Render" style="width: 60%; margin: 0 auto; display: block;" />
+					</div>
+					<p>
+					The research aimed to experimentally identify uncertain dynamic parameters such as armature resistance, inductance, and viscous friction of the DC motor. Data was gathered from the physical system using an Arduino-controlled acquisition setup and analyzed using MATLAB/Simulink.
+					</p>
+					<p>
+					The resulting dynamic model was refined through grey-box and black-box identification methods, demonstrating strong agreement between simulation and experimental measurements.
+					</p>
+					<p>
+					Building on this foundation, an extension of the work was presented at the 7th IEEE Colombian Conference on Automatic Control (CCAC 2025). This second publication introduced a formal Hybrid Dynamical System (HDS) perspective, modeling the switching behavior inherent to the pinion double-rack mechanism.
+					</p>
+					<p>
+					The system behavior was represented using hybrid automata capable of describing transitions between discrete motion phases based on spring deformation and gear angular displacement.
+					</p>
+					<p>
+					The hybrid model employed a state-space formulation incorporating the previously identified parameters. Transitions between states were triggered by guard conditions linked to spring deformation limits. Each operating mode corresponded to either upward or downward motion of one of the racks.
+					</p>
+					<p>
+					The simulation framework was implemented in MATLAB/Simulink with switching logic, enabling evaluation of the system under realistic constraints including friction effects and power consumption.
+					</p>
+					<div class="image main">
+						<img src="images/pinion_double_rack/block (1).png" alt="Hybrid System Block Diagram" style="width: 60%; margin: 0 auto; display: block;" />
+					</div>
+					<h2>Energy Consumption Analysis</h2>
+					<p>
+					A key contribution of this work was the analysis of energy consumption under hybrid control conditions.
+					</p>
+					<p>
+					By integrating the absolute current over time, the simulation results were compared against experimental measurements, revealing a 30.8% increase in real energy consumption caused by electrical and mechanical inefficiencies not fully captured in the theoretical model.
+					</p>
+					<p>
+					Additionally, the system behavior in phase space validated the effectiveness of the hybrid representation in accurately predicting switching dynamics and state transitions.
+					</p>
+					<h2>Physical Demonstration of the System</h2>
+					<p>
+					Watch the physical prototype and hybrid system operation in the following demonstration video:
+					</p>
+					<h2>Video Demonstration</h2>
+					<div class="video-container">
+						<iframe src="https://www.youtube.com/embed/cgN-SCW-EeU" 
+								allowfullscreen="" 
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+						</iframe>
+					</div>
+					<ul class="actions">
+						<li><a href="index.html#projects" class="button">Back to Projects</a></li>
+					</ul>
+				</section>
+			</div>
+			<footer id="footer">
+				<section class="split contact">
+				</section>
+			</footer>
+			<div id="copyright">
+				<ul><li>&copy; Portfolio</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
